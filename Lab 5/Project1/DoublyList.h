@@ -43,22 +43,22 @@ public:
 	*********************************************************/
 
 	// Declaration function print
-
+	void print() const;
 
 	// Declaration function reversePrint
-
+	void reversePrint() const;
 
 	// Declaration function front
-
+	int front();
 
 	// Declaration function back
-
+	int back();
 
 	// Declaration function copyToList
-
+	void copyToList(DoublyList list);
 
 	// Declaration function deleteElem
-
+	void deleteElem(int intDelete);
 
 private:
     Node *first;	// pointer to the first node on the list
