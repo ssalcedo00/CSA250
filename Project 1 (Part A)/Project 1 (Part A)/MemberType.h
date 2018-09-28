@@ -32,7 +32,6 @@ public:
 	string getLastName() const;
 	int getMembershipNo() const;
 
-
 	~MemberType();
 private:
 	string fName;
@@ -41,5 +40,5 @@ private:
 
 };
 
-#endif // !1
+#endif
 
