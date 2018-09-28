@@ -1,39 +1,67 @@
-#include "MemberType.h"
 #ifndef MEMBERTYPE_CPP
 #define MEMBERTYPE_CPP
 
+/*
+Phan, Thang
+Salcedo, Salvador
+Nguyen, Tony
+Kim, Ji Soo
+
+CS A250
+September 29th, 2018
+
+Project 1 Part A
+*/
+
+#include "MemberType.h"
+#include <iostream>
+
+using namespace std;
 
 MemberType::MemberType()
 {
-	int memberNum = 0;
+	num = 0;
 }
 
-MemberType::MemberType(const string & first, const string & last, int num)
+MemberType::MemberType(const string & firstN, const string & lastN, int no)
 {
+	fName = firstN;
+	lName = lastN;
+	num = no;
 }
 
-void MemberType::printMemberInfo() const
+void MemberType::setMemberInfo(const string & firstN, const string & lastN, int no)
 {
+	fName = firstN;
+	lName = lastN;
+	num = no;
 }
 
 string MemberType::getFirstName() const
 {
-	return string();
+	return fName;
 }
 
 string MemberType::getLastName() const
 {
-	return string();
+	return lName;
 }
 
 int MemberType::getMembershipNo() const
 {
-	return 0;
+	return num;
 }
 
-MemberType::~MemberType()
+void MemberType::printName() const
 {
+	cout << fName << ", " << lName;
 }
 
+void MemberType::printMemberInfo() const
+{
+	cout << num << " - " << fName << " " << lName;
+}
+
+MemberType::~MemberType() {}
 
 #endif
