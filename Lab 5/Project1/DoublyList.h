@@ -49,16 +49,16 @@ public:
 	void reversePrint() const;
 
 	// Declaration function front
-	int front();
+	int front() const;
 
 	// Declaration function back
-	int back();
+	int back() const;
 
 	// Declaration function copyToList
-	void copyToList(DoublyList list);
+	void copyToList(DoublyList& myList);
 
 	// Declaration function deleteElem
-	void deleteElem(int intDelete);
+	void deleteElem(int elem);
 
 private:
     Node *first;	// pointer to the first node on the list
