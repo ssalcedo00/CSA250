@@ -61,4 +61,3 @@ void MemberType::printMemberInfo() const
 
 MemberType::~MemberType() {}
 
-//#endif
