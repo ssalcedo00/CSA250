@@ -21,12 +21,15 @@
     <ClCompile Include="DonorType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MemberType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Project 1 (Part A)\Project 1 (Part A)\MemberType.h">
+    <ClInclude Include="DonorType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DonorType.h">
+    <ClInclude Include="MemberType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
