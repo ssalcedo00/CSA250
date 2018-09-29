@@ -1,5 +1,13 @@
 /*
-	Name header
+Phan, Thang
+Salcedo, Salvador
+Nguyen, Tony
+Kim, Ji Soo
+
+CS A250
+September 29th, 2018
+
+Lab 5
 */
 
 #include "DoublyList.h"
@@ -57,4 +65,49 @@ void DoublyList::copyToList(DoublyList & myList)
 // Definition function deleteElem
 void DoublyList::deleteElem(int intDelete)
 {
+
+	if (!count)
+		cerr << "Cannot delete from an empty list.";
+	else
+	{
+		Node * current = first;
+		if (first->getData() == intDelete) // node to delete is first
+		{
+			first = first->getNext();
+			delete current;
+			current = nullptr;
+			count--;
+		}
+		else if (last->getData() == intDelete) // node to delete is last
+		{
+			current = last;
+			last = last->getPrev();
+			(current->getPrev())->setNext(nullptr);
+			delete current;
+			current = nullptr;
+			count--;
+		}
+		else // node to be deleted is in the middle
+		{
+			bool found = false;
+			while (current != nullptr && (!found))
+			{
+				if (current->getData() == intDelete)
+				{
+					(current->getNext())->setPrev(current->getPrev());
+					(current->getPrev())->setNext(current->getNext());
+					delete current;
+					current = nullptr;
+					count--;
+					found = true;
+				}
+				else
+				{
+					current = current->getNext();
+				}
+			}
+			if (!found) cerr << "Item to be deleted is not in the list.";
+		}
+		
+	}
 }

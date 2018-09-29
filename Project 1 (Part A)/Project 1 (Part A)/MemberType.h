@@ -1,3 +1,6 @@
+#ifndef MEMBERTYPE_H
+#define MEMBERTYPE_H
+
 /*
 Phan, Thang
 Salcedo, Salvador
@@ -9,9 +12,6 @@ September 29th, 2018
 
 Project 1 Part A
 */
-
-#ifndef MEMBERTYPE_H
-#define MEMBERTYPE_H
 
 #include <string>
 #include <iostream>
@@ -43,4 +43,4 @@ private:
 	int memberNum;
 };
 
-#endif 
+#endif // MEMBERTYPE_H
