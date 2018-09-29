@@ -111,13 +111,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\OneDrive\Desktop\lab_05_doubly_linked_lists_3\Project1\DoublyList.cpp" />
+    <ClCompile Include="DoublyList.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Testing.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\OneDrive\Desktop\lab_05_doubly_linked_lists_3\Project1\DoublyList.h" />
+    <ClInclude Include="DoublyList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

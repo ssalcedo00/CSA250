@@ -24,13 +24,13 @@
     <ClCompile Include="Testing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\OneDrive\Desktop\lab_05_doubly_linked_lists_3\Project1\DoublyList.cpp">
+    <ClCompile Include="DoublyList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\OneDrive\Desktop\lab_05_doubly_linked_lists_3\Project1\DoublyList.h">
+    <ClInclude Include="DoublyList.h">
       <Filter>Header Files</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
 </Project>
