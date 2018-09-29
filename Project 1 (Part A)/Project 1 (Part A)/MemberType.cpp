@@ -1,5 +1,3 @@
-#ifndef MEMBERTYPE_CPP
-#define MEMBERTYPE_CPP
 
 /*
 Phan, Thang
@@ -18,8 +16,7 @@ Project 1 Part A
 
 using namespace std;
 
-MemberType::MemberType()
-{
+MemberType::MemberType() {
 	num = 0;
 }
 
@@ -54,14 +51,13 @@ int MemberType::getMembershipNo() const
 
 void MemberType::printName() const
 {
-	cout << fName << ", " << lName;
+	cout << fName << ", " << lName << endl;
 }
 
 void MemberType::printMemberInfo() const
 {
-	cout << num << " - " << fName << " " << lName;
-}
+	cout << num << " - " << fName << " " << lName << endl;
+} 
 
 MemberType::~MemberType() {}
 
-#endif
