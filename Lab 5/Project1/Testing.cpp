@@ -3,12 +3,12 @@
 void functionCall(DoublyList& list1, DoublyList& list2,
 	const string& func, int& elem)
 {
-	//if (func == "print") list1.print();
-	//else if (func == "reversePrint") list1.reversePrint();
-	//else if (func == "front") elem = list1.front();
-	//else if (func == "back") elem = list1.back();
-	//else if (func == "copyToList") list1.copyToList(list2);
-	//else list1.deleteElem(elem);
+	if (func == "print") list1.print();
+	else if (func == "reversePrint") list1.reversePrint();
+	else if (func == "front") elem = list1.front();
+	else if (func == "back") elem = list1.back();
+	else if (func == "copyToList") list1.copyToList(list2);
+	else list1.deleteElem(elem);
 }
 
 void testPrint()
