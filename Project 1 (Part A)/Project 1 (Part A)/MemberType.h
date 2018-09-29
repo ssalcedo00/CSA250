@@ -1,5 +1,4 @@
-#ifndef MEMBERTYPE_H
-#define MEMBERTYPE_H
+#pragma once
 
 /*
 Phan, Thang
@@ -20,10 +19,10 @@ class MemberType {
 public:
 	//Constructors
 	MemberType();
-	MemberType(const string& first, const string& last, int num);
+	MemberType(const string& , const string& , int num);
 
 	//Void
-	void setMemberInfo(const string& firstN, const string& lastN, int num);
+	void setMemberInfo(const string& , const string& , int );
 	void printName() const;
 	void printMemberInfo() const;
 
@@ -40,5 +39,4 @@ private:
 
 };
 
-#endif
 
