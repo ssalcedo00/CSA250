@@ -20,10 +20,10 @@ class MemberType {
 public:
 	//Constructors
 	MemberType();
-	MemberType(const string& , const string& , int num);
+	MemberType(const string&, const string&, int num);
 
 	//Void
-	void setMemberInfo(const string& , const string& , int );
+	void setMemberInfo(const string&, const string&, int);
 	void printName() const;
 	void printMemberInfo() const;
 
@@ -39,7 +39,4 @@ private:
 	int num;
 
 };
-
-#endif // MEMBERTYPE_H
-
-
+#endif // !MEMBERTYPE_H
