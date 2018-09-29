@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MEMBERTYPE_H
+#define MEMBERTYPE_H
 
 /*
 Phan, Thang
@@ -38,5 +39,7 @@ private:
 	int num;
 
 };
+
+#endif // MEMBERTYPE_H
 
 
