@@ -1,5 +1,3 @@
-#pragma once
-
 /*
 Phan, Thang
 Salcedo, Salvador
@@ -12,31 +10,37 @@ September 29th, 2018
 Project 1 Part A
 */
 
+#ifndef MEMBERTYPE_H
+#define MEMBERTYPE_H
+
 #include <string>
+#include <iostream>
+
 using namespace std;
 
-class MemberType {
+class MemberType
+{
 public:
-	//Constructors
 	MemberType();
-	MemberType(const string& , const string& , int num);
+	MemberType(const string& newFirstName,
+		const string& newLastName, int newMemberNum);
 
-	//Void
-	void setMemberInfo(const string& , const string& , int );
-	void printName() const;
-	void printMemberInfo() const;
+	void setMemberInfo(const string& newFirstName,
+		const string& newLastname, int newMemberNum);
 
-	//Return values
 	string getFirstName() const;
 	string getLastName() const;
 	int getMembershipNo() const;
 
-	~MemberType();
-private:
-	string fName;
-	string lName;
-	int num;
+	void printName() const;
+	void printMemberInfo() const;
 
+	~MemberType();
+
+private:
+	string firstName;
+	string lastName;
+	int memberNum;
 };
 
-
+#endif 
