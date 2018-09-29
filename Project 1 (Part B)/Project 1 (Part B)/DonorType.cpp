@@ -1,35 +1,37 @@
 #include "DonorType.h"
 
-DonorType::DonorType()
-{
+
+DonorType::DonorType() {
+	MemberType();
+	dAmount = 0;
 }
 
-DonorType::DonorType(const string &, const string &, int, double)
-{
+DonorType::DonorType(const string & newFName, const string &newLName, int newNum, double newAmount) {
+	//uses constructor, MemberType from parent header
+	MemberType(newFName, newLName, newAmount);
+	setAmountDonated(newAmount);
 }
 
 void DonorType::setDonorInfo(const string & newFName, const string & newLName, int newNum, double newAmount) {
-	
-	dAmount = newAmount;
+	//uses memberfunction, setMemberInfo from parent header
+	void setMemberInfo(const string& newFName, const string& newLName, int newNum);
+	setAmountDonated(newAmount);
 }
 
 void DonorType::setAmountDonated(double newAmount) {
 	dAmount = newAmount;
 }
 
-double DonorType::getAmountDonated() const
-{
-	return 0.0;
+double DonorType::getAmountDonated() const {
+	return dAmount;
 }
 
-void DonorType::printDonor()
-{
+void DonorType::printDonor() {
 }
 
-void DonorType::printDonation()
-{
+void DonorType::printDonation() {
+
 }
 
-DonorType::~DonorType()
-{
+DonorType::~DonorType() {
 }
