@@ -51,13 +51,13 @@ int MemberType::getMembershipNo() const
 
 void MemberType::printName() const
 {
-	cout << fName << ", " << lName;
+	cout << fName << ", " << lName << endl;
 }
 
 void MemberType::printMemberInfo() const
 {
-	cout << num << " - " << fName << " " << lName;
-}
+	cout << num << " - " << fName << " " << lName << endl;
+} 
 
 MemberType::~MemberType() {}
 
