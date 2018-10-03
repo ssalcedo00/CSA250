@@ -27,10 +27,11 @@ double DonorType::getAmountDonated() const {
 }
 
 void DonorType::printDonor() {
+	printMemberInfo();
 }
 
 void DonorType::printDonation() {
-
+	cout << getLastName() << ", " << getFirstName() << "/n" << "    " << "Donation Amount: $" << fixed << setprecision(2) <<  getAmountDonated() << endl;
 }
 
 DonorType::~DonorType() {

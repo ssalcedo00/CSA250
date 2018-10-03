@@ -2,8 +2,10 @@
 #define DONORTYPE_H
 
 #include "MemberType.h"
+#include <iostream>
+#include <iomanip>
 
-class DonorType {
+class DonorType : public MemberType{
 public:
 	//Constructors
 	DonorType();
