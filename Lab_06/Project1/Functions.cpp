@@ -4,15 +4,15 @@
 
 #include "AnyList.h"
 
-// Definition of overloaded insertion stream operator as a friend functionn
-void operator<<(ostream & out, const AnyList& list) {
+// Definition of overloaded insertion stream operator as a friend function
+ostream& operator<<(ostream & out, const AnyList& list) {
 	if (!list.count) cerr << "List is empty." << endl;
 	Node * head = list.first;
-	while (head->getNext() != nullptr) {
-		out << head->getData();
+	while (head != nullptr) {
+		out << head->getData() << " ";
 		head = head->getNext();
 	}
-	head = nullptr;
+	return out;
 }
 
 
