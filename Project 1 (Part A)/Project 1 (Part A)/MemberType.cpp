@@ -1,4 +1,3 @@
-
 /*
 Phan, Thang
 Salcedo, Salvador
@@ -12,52 +11,52 @@ Project 1 Part A
 */
 
 #include "MemberType.h"
-#include <iostream>
 
-using namespace std;
-
-MemberType::MemberType() {
-	num = 0;
+MemberType::MemberType()
+{
+	memberNum = 0;
 }
 
-MemberType::MemberType(const string & firstN, const string & lastN, int no)
+MemberType::MemberType(const string& newFirstName,
+	const string& newLastName, int newMemberNum)
 {
-	fName = firstN;
-	lName = lastN;
-	num = no;
+	firstName = newFirstName;
+	lastName = newLastName;
+	memberNum = newMemberNum;
 }
 
-void MemberType::setMemberInfo(const string & firstN, const string & lastN, int no)
+void MemberType::setMemberInfo(const string& newFirstName,
+	const string& newLastName, int newMemberNum)
 {
-	fName = firstN;
-	lName = lastN;
-	num = no;
+	firstName = newFirstName;
+	lastName = newLastName;
+	memberNum = newMemberNum;
 }
 
 string MemberType::getFirstName() const
 {
-	return fName;
+	return firstName;
 }
 
 string MemberType::getLastName() const
 {
-	return lName;
+	return lastName;
 }
 
 int MemberType::getMembershipNo() const
 {
-	return num;
+	return memberNum;
 }
 
 void MemberType::printName() const
 {
-	cout << fName << ", " << lName << endl;
+	cout << firstName << ", " << lastName << endl;
 }
 
 void MemberType::printMemberInfo() const
 {
-	cout << num << " - " << fName << " " << lName << endl;
+	cout << memberNum << " - " << firstName << " " << lastName << endl;
 } 
 
-MemberType::~MemberType() {}
-
+MemberType::~MemberType()
+{}

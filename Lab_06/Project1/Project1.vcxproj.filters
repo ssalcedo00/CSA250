@@ -21,15 +21,12 @@
     <ClCompile Include="Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Testing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DoublyList.cpp">
+    <ClCompile Include="AnyList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DoublyList.h">
+    <ClInclude Include="AnyList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
