@@ -23,10 +23,11 @@ private:
 
 class AnyList
 {
-	// Declaration of overloaded insertion stream operator as a friend function
-
+	
 
 public:
+	// Declaration of overloaded insertion stream operator as a friend function
+	void friend operator<<(ostream & out, const AnyList& list);
 	AnyList();	
 
 	void insertFront(const int a[], int numOfElem);	

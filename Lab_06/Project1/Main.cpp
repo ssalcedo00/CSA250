@@ -23,7 +23,7 @@ int main()
 	list5.insertFront(a5, 3);
 	list6.insertFront(a6, 4);
 
-	/*
+	
 	cout << "TEST: Ostream operator <<\n\n";
 	cout << "\tList1 is: " << list1 << endl;
 	cout << "\tList2 is: " << list2 << endl;
@@ -31,7 +31,6 @@ int main()
 	cout << "\tList4 is: " << list4 << endl;
 	cout << "\tList5 is: " << list5 << endl;
 	cout << "\tList6 is: " << list6 << endl;
-	*/
 
 	cout << "\n\nTEST: Comparison operator ==\n\n";
 	if (list1 == list2)	cout << "\tList1 == List2" << endl;

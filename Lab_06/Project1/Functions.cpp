@@ -5,6 +5,15 @@
 #include "AnyList.h"
 
 // Definition of overloaded insertion stream operator as a friend functionn
+void operator<<(ostream & out, const AnyList& list) {
+	if (!list.count) cerr << "List is empty." << endl;
+	Node * head = list.first;
+	while (head->getNext() != nullptr) {
+		out << head->getData();
+		head = head->getNext();
+	}
+	head = nullptr;
+}
 
 
 // Definition of overloaded comparison operator == as a member function
@@ -16,10 +25,16 @@ bool AnyList::operator==(const AnyList & list) const
 		Node * objPtr = first;
 		Node * refPtr = list.first;
 		while (objPtr->getNext() != nullptr) {
-			if (objPtr->getData() != refPtr->getData()) return false;
+			if (objPtr->getData() != refPtr->getData()) {
+				objPtr = nullptr;
+				refPtr = nullptr;
+				return false;
+			}
 			objPtr = objPtr->getNext();
 			refPtr = refPtr->getNext();
 		}
+		objPtr = nullptr;
+		refPtr = nullptr;
 	}
 	return true;
 }
