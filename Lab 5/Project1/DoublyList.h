@@ -28,10 +28,10 @@ private:
 class DoublyList
 {
 public:
-	DoublyList(); 
-		
+	DoublyList();
+
 	void insertBack(int newData);
-	
+
 	bool isEmpty() const;
 
 	~DoublyList();
@@ -61,8 +61,8 @@ public:
 	void deleteElem(int elem);
 
 private:
-    Node *first;	// pointer to the first node on the list
-    Node *last;		// pointer to the last node on the list
+	Node *first;	// pointer to the first node on the list
+	Node *last;		// pointer to the last node on the list
 	int count;		// number of nodes in the list
 };
 

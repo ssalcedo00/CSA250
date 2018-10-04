@@ -15,7 +15,8 @@ Lab 5
 // Definition function print
 void DoublyList::print() const
 {
-	Node * current = first;
+	Node *current = first;
+
 	while (current != nullptr)
 	{
 		cout << current->getData() << " ";
@@ -24,10 +25,10 @@ void DoublyList::print() const
 }
 
 // Definition function reversePrint
-
 void DoublyList::reversePrint() const
 {
-	Node * current = last;
+	Node *current = last;
+
 	while (current != first->getPrev())
 	{
 		cout << current->getData() << " ";
@@ -41,7 +42,6 @@ int DoublyList::front() const
 	return first->getData();
 }
 
-
 // Definition function back
 int DoublyList::back() const
 {
@@ -49,28 +49,27 @@ int DoublyList::back() const
 }
 
 // Definition function copyToList
-void DoublyList::copyToList(DoublyList & myList)
+void DoublyList::copyToList(DoublyList& myList)
 {
-	Node * current = first;
+	Node *current = first;
+
 	while (current != nullptr)
 	{
 		myList.insertBack(current->getData());
 		current = current->getNext();
 	}
 }
-
 // Copies from parameter object to empty calling object
-
 
 // Definition function deleteElem
 void DoublyList::deleteElem(int intDelete)
 {
-
 	if (!count)
 		cerr << "Cannot delete from an empty list.";
 	else
 	{
-		Node * current = first;
+		Node *current = first;
+
 		if (first->getData() == intDelete) // node to delete is first
 		{
 			first = first->getNext();
@@ -82,7 +81,7 @@ void DoublyList::deleteElem(int intDelete)
 		{
 			current = last;
 			last = last->getPrev();
-			(current->getPrev())->setNext(nullptr);
+			last->setNext(nullptr);
 			delete current;
 			current = nullptr;
 			count--;
@@ -90,12 +89,13 @@ void DoublyList::deleteElem(int intDelete)
 		else // node to be deleted is in the middle
 		{
 			bool found = false;
+
 			while (current != nullptr && (!found))
 			{
 				if (current->getData() == intDelete)
 				{
-					(current->getNext())->setPrev(current->getPrev());
-					(current->getPrev())->setNext(current->getNext());
+					current->getNext()->setPrev(current->getPrev());
+					current->getPrev()->setNext(current->getNext());
 					delete current;
 					current = nullptr;
 					count--;
@@ -106,8 +106,8 @@ void DoublyList::deleteElem(int intDelete)
 					current = current->getNext();
 				}
 			}
-			if (!found) cerr << "Item to be deleted is not in the list.";
+			if (!found)
+				cerr << "Item to be deleted is not in the list.";
 		}
-		
 	}
 }
