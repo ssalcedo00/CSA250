@@ -9,6 +9,7 @@ ostream& operator<<(ostream& out, const DPair& otherPair)
 
 DPair::DPair()
 {
+	//poop
 	first = new int;
 	second = new int;
 	*first = 0;
