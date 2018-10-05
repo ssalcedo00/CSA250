@@ -22,6 +22,7 @@ DPair::DPair(int a, int b)
 	second = new int;
 	*first = a;
 	*second = b;
+	
 }
 
 DPair::DPair(const DPair & otherPair)
