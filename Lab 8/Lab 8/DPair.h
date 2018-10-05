@@ -21,7 +21,6 @@ public:
 	DPair& operator=(const DPair& pObj);
 	~DPair();
 
-
 private:
 	int *first, *second;
 };
