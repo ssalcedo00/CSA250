@@ -1,3 +1,15 @@
+/*
+Phan, Thang
+Salcedo, Salvador
+Nguyen, Tony
+Kim, Ji Soo
+
+CS A250
+October 6, 2018
+
+Project 1 Part B
+*/
+
 #include "DonorType.h"
 
 DonorType::DonorType() : MemberType() 
