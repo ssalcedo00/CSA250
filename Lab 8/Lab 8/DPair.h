@@ -1,3 +1,14 @@
+/*
+Kim, JiSoo
+Phan, Thang
+Salcedo, Sal
+Nguyen, Tony
+
+October 6th, 2018
+
+CSA250
+*/
+
 #ifndef DPAIR_H
 #define DPAIR_H
 

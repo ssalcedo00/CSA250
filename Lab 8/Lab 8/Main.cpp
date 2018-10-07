@@ -1,11 +1,12 @@
 /*
-	Kim, JiSoo
-	Phan, Thang
-	Salcedo, Sal
-	Nguyen, Tony
+Kim, JiSoo
+Phan, Thang
+Salcedo, Sal
+Nguyen, Tony
 
-			
-	CSA250
+October 6th, 2018
+
+CSA250
 */
 
 #include "DPair.h"

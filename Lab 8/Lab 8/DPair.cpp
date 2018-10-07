@@ -1,3 +1,14 @@
+/*
+Kim, JiSoo
+Phan, Thang
+Salcedo, Sal
+Nguyen, Tony
+
+October 6th, 2018
+
+CSA250
+*/
+
 #include "DPair.h"
 
 ostream& operator<<(ostream& out, const DPair& otherPair)
