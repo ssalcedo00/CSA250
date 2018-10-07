@@ -231,4 +231,82 @@ void DoublyList::createAList()
 	//     
 	//     Re-visit your code for efficiency.
 
+	// practice:
+	// insert new node with 8 before last
+	// Original: 1 2 3 4 5 6 7 
+	// List Becomes: 1 2 3 4 5 6 8 7
+	current = new Node(8, last->getPrev(), last);
+	current->getPrev()->setNext(current);
+	current->getNext()->setPrev(current);
+	count++;
+
+	cout << "Insert a new Node: " << endl;
+	testAll();
+
+	// Original: 1 2 3 4 5 6 8 7
+	// Rearrange List by pointers
+	// List Becomes: 4 5 6 8 7 1 2 3
+	Node * trailCurrent = first->getNext()->getNext();
+	current = first->getNext()->getNext()->getNext();
+	last->setNext(first);
+	first->setPrev(last);
+	last = trailCurrent;
+	last->setNext(nullptr);
+	first = current;
+	first->setPrev(nullptr);
+
+	cout << "Rearrange List " << endl;
+	testAll();
+
+	// Swap nodes 
+	// Original 4 5 6 8 7 1 2 3
+	// List Becomes: 5 4 6 8 7 1 2 3
+	current = first->getNext();
+	first->setNext(current->getNext());
+	current->getNext()->setPrev(first);
+	first->setPrev(current);
+	current->setNext(first);
+	current->setPrev(nullptr);
+	first = current;
+	
+	cout << "Rearrange List " << endl;
+	testAll();
+
+	// Re-arrange/ swap values: Overwrite values
+	// Original 5 4 6 8 7 1 2 3
+	// List Becomes: 6 8 7 8 7 1 2 3
+	first->setData(6);
+	first->getNext()->setData(8);
+	first->getNext()->getNext()->setData(7);
+
+	cout << "Rearrange List " << endl;
+	testAll();
+
+	// Delete a node
+	// Original: 6 8 7 8 7 1 2 3
+	// list becomes 8 7 8 7 1 2 3
+	current = first;
+	first = first->getNext();
+	delete current;
+	current = nullptr;
+	first->setPrev(nullptr);
+	first->setNext(first->getNext());
+	count--;
+
+	cout << "Delete first " << endl;
+	testAll();
+	
+	// delete everything
+	current = first;
+	while (first != nullptr)
+	{
+		first = first->getNext();
+		delete current;
+		current = first;
+	}
+
+	count = 0;
+	cout << "Delete List " << endl;
+	testAll();
+
 }

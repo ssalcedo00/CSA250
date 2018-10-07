@@ -1,5 +1,3 @@
-﻿  DoublyList.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Functions.cpp
-  Main.cpp
-  Generating Code...
-  Project1.vcxproj -> C:\Users\jisoo\OneDrive\Desktop\lab_07_dll_create_a_list\x64\Debug\Project1.exe
+  Project1.vcxproj -> C:\Users\jisoo\source\repos\ssalcedo00\CSA250\lab_07_dll_create_a_list\x64\Debug\Lab 7.exe

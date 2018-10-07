@@ -1,4 +1,3 @@
-
 /*
 Phan, Thang
 Salcedo, Salvador
@@ -6,9 +5,9 @@ Nguyen, Tony
 Kim, Ji Soo
 
 CS A250
-September 29th, 2018
+October 6, 2018
 
-Project 1 Part A
+Project 1 Part B
 */
 
 #include "MemberType.h"
@@ -16,7 +15,8 @@ Project 1 Part A
 
 using namespace std;
 
-MemberType::MemberType() {
+MemberType::MemberType() 
+{
 	num = 0;
 }
 
