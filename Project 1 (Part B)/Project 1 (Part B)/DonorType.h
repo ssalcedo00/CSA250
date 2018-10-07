@@ -19,8 +19,8 @@ public:
 	double getAmountDonated() const;
 
 	//Print
-	void printDonor();
-	void printDonation();
+	void printDonor() const;
+	void printDonation() const;
 
 	//Destrutor
 	~DonorType();

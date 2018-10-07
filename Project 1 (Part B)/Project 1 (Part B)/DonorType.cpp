@@ -6,15 +6,15 @@ DonorType::DonorType() {
 	dAmount = 0;
 }
 
-DonorType::DonorType(const string & newFName, const string &newLName, int newNum, double newAmount) {
+DonorType::DonorType(const string & newFName, const string & newLName, int newNum, double newAmount) {
 	//uses constructor, MemberType from parent header
-	MemberType(newFName, newLName, newAmount);
+	MemberType(newFName, newLName, newNum);
 	setAmountDonated(newAmount);
 }
 
 void DonorType::setDonorInfo(const string & newFName, const string & newLName, int newNum, double newAmount) {
 	//uses memberfunction, setMemberInfo from parent header
-	void setMemberInfo(const string& newFName, const string& newLName, int newNum);
+	setMemberInfo(newFName, newLName, newNum);
 	setAmountDonated(newAmount);
 }
 
@@ -26,12 +26,13 @@ double DonorType::getAmountDonated() const {
 	return dAmount;
 }
 
-void DonorType::printDonor() {
+void DonorType::printDonor() const {
 	printMemberInfo();
 }
 
-void DonorType::printDonation() {
-	cout << getLastName() << ", " << getFirstName() << "/n" << "    " << "Donation Amount: $" << fixed << setprecision(2) <<  getAmountDonated() << endl;
+void DonorType::printDonation() const{
+	cout << getLastName() << ", " << getFirstName() << endl; 
+	// "/n" << "    " << "Donation Amount: $" << fixed << setprecision(2) << getAmountDonated() << endl;
 }
 
 DonorType::~DonorType() {
