@@ -1,12 +1,18 @@
 #include "DonorType.h"
 
 int main() {
-	DonorType person = DonorType();
-	DonorType man = DonorType("its", "ya boi", 83284239, 235.62);
+	DonorType person = DonorType("John", "Doe", 23451355, 5.00);
 
-	man.printDonor();
-	person.printDonor();
+	person.printDonation();
+	
+	person.setAmountDonated(5555.983);
 
+	person.printDonation();
+
+	person.setDonorInfo("Tim", "Bool", 12312312, 777.1);
+
+	person.printDonation();
+	
 	system("pause");
 	return 0;
 }

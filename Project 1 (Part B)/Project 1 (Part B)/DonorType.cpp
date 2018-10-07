@@ -1,39 +1,42 @@
 #include "DonorType.h"
 
-
-DonorType::DonorType() {
-	MemberType();
+DonorType::DonorType() : MemberType() 
+{
 	dAmount = 0;
 }
 
-DonorType::DonorType(const string & newFName, const string & newLName, int newNum, double newAmount) {
-	//uses constructor, MemberType from parent header
-	MemberType(newFName, newLName, newNum);
-	setAmountDonated(newAmount);
+DonorType::DonorType(const string & donorLName, const string & donorFName, int dNum, double donation) : MemberType(donorLName, donorFName, dNum) 
+{
+	dAmount = donation;
 }
 
-void DonorType::setDonorInfo(const string & newFName, const string & newLName, int newNum, double newAmount) {
-	//uses memberfunction, setMemberInfo from parent header
-	setMemberInfo(newFName, newLName, newNum);
-	setAmountDonated(newAmount);
+void DonorType::setDonorInfo(const string & donorLName, const string & donorFName, int dNum, double donation) 
+{
+	MemberType::setMemberInfo(donorLName, donorFName, dNum);
+	dAmount = donation;
 }
 
-void DonorType::setAmountDonated(double newAmount) {
-	dAmount = newAmount;
+void DonorType::setAmountDonated(double donation) 
+{
+	dAmount = donation;
 }
 
-double DonorType::getAmountDonated() const {
+double DonorType::getAmountDonated() const 
+{
 	return dAmount;
 }
 
-void DonorType::printDonor() const {
-	printMemberInfo();
+void DonorType::printDonor() const 
+{
+	MemberType::printMemberInfo();
 }
 
-void DonorType::printDonation() const{
-	cout << getLastName() << ", " << getFirstName() << endl; 
-	// "/n" << "    " << "Donation Amount: $" << fixed << setprecision(2) << getAmountDonated() << endl;
+void DonorType::printDonation() const 
+{
+	cout << getLastName() << ", " << getFirstName() << endl;
+	cout << "    " << "Donation amount: $" << fixed << setprecision(2) << getAmountDonated() << endl;
 }
 
-DonorType::~DonorType() {
+DonorType::~DonorType() 
+{
 }

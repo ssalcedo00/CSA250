@@ -9,11 +9,11 @@ class DonorType : public MemberType{
 public:
 	//Constructors
 	DonorType();
-	DonorType(const string&, const string&, int, double );
+	DonorType(const string & lName, const string & FName, int newID, double newDAmount);
 
 	//Modifier Functions
-	void setDonorInfo(const string&, const string&, int, double);
-	void setAmountDonated(double);
+	void setDonorInfo(const string & lName, const string & FName, int newID, double newDAmount);
+	void setAmountDonated(double newDAmount);
 
 	//Accessor Functions
 	double getAmountDonated() const;
