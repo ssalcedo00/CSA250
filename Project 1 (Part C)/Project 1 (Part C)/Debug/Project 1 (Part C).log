@@ -1,0 +1,5 @@
+﻿  DonorList.cpp
+  Main.cpp
+  Generating Code...
+c:\users\jisoo\onedrive\desktop\project 1 (part c)\project 1 (part c)\donorlist.cpp(26): warning C4172: returning address of local variable or temporary: list
+  Project 1 (Part C).vcxproj -> C:\Users\jisoo\OneDrive\Desktop\Project 1 (Part C)\Debug\Project 1 (Part C).exe
