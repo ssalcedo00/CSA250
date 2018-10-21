@@ -19,16 +19,16 @@ public:
 	DonorList();
 	DonorList(int newCapacity);
 
-	void addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated);
+	void addDonor(const string & firstName, const string & lastName, int memberNum, double amountDonated);
 
-	int getNumberOfDonors();
+	int getNumberOfDonors() const;
 
 	double getTotalDonations() const;
 	double getHighestDonation() const;
 
 	bool isEmpty();
-	bool searchID(int memberNum);
-	bool searchName(const string& lastName);
+	bool searchID(int memberNum) const;
+	bool searchName(const string& lastName) const;
 
 	void deleteDonor(int memberNum);
 	void emptyList();
