@@ -1,6 +1,18 @@
 #ifndef DONORLIST_H
 #define DONORLIST_H
 
+/*
+	Phan, Thang
+	Salcedo, Salvador
+	Nguyen, Tony
+	Kim, Ji Soo
+
+	CS A250
+	October 20, 2018
+
+	Project 1 Part C
+*/
+
 #include "DonorType.h"
 
 #include<iostream>
@@ -26,7 +38,7 @@ public:
 	double getTotalDonations() const;
 	double getHighestDonation() const;
 
-	bool isEmpty();
+	bool isEmpty() const;
 	bool searchID(int memberNum) const;
 	bool searchName(const string& lastName) const;
 

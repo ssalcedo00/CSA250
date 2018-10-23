@@ -1,3 +1,15 @@
+/*
+	Phan, Thang
+	Salcedo, Salvador
+	Nguyen, Tony
+	Kim, Ji Soo
+
+	CS A250
+	October 20, 2018
+
+	Project 1 Part C
+*/
+
 #include "DonorList.h"
 
 // Definition default constructor
@@ -40,6 +52,7 @@ void DonorList::addDonor(const string& firstName, const string& lastName, int me
 	}
 	else
 		list[0].setDonorInfo(firstName, lastName, memberNum, amountDonated);
+
 	numOfElem++;
 }
 	
@@ -80,7 +93,7 @@ double DonorList::getHighestDonation() const
 
 // Definition member function isEmpty
 
-bool DonorList::isEmpty()
+bool DonorList::isEmpty() const
 {
 	return (numOfElem == 0);
 }
@@ -89,14 +102,12 @@ bool DonorList::isEmpty()
 
 bool DonorList::searchID(int memberNum) const
 {
-	
 	int i = 0;
+
 	while (i < numOfElem)
 	{
 		if (list[i].getMembershipNo() == memberNum)
-		{
 			return true;
-		}
 		i++;
 	}
 	return false;
@@ -107,6 +118,7 @@ bool DonorList::searchID(int memberNum) const
 bool DonorList::searchName(const string& lastName) const
 {
 	int i = 0;
+
 	while (i < numOfElem)
 	{
 		if (list[i].getLastName() == lastName)
@@ -142,20 +154,10 @@ void DonorList::emptyList()
 
 void DonorList::printAllDonors() const
 {
-	if (numOfElem == 1)
+	for (int i = 0; i < numOfElem; i ++)
 	{
 		cout << "    ";
-		list[0].printDonor();
-	}
-	else
-	{
-		int i = 0;
-		while (i < numOfElem)
-		{
-			cout << "    ";
-			list[i].printDonor();
-			i++;
-		}
+		list[i].printDonor();
 	}
 }
 
@@ -182,7 +184,6 @@ void DonorList::printDonorByName(const string& lastName) const
 		if (!found)
 			cout << "There are no donors with this last name.\n";
 	}
-
 }
 
 // Definition member function printDonor
@@ -215,6 +216,7 @@ void DonorList::printDonation(int memberNum) const
 	{
 		int i = 0;
 		bool found = false;
+
 		while (!found && i < numOfElem)
 		{
 			if (list[i].getMembershipNo() == memberNum)
@@ -233,35 +235,19 @@ void DonorList::printDonation(int memberNum) const
 
 void DonorList::printTotalDonations() const
 {
-	if (numOfElem == 0)
-		cout << "     Total donations: $0.00";
-	else
-	{
-		cout << "     Total donations: $" <<
-			fixed << showpoint << setprecision(2) << getTotalDonations();
-	}
-	cout << endl;
+	cout << "     Total donations: $" << getTotalDonations() << endl;
 }
-
 // Definition member function printHighestDonation
 
 void DonorList::printHighestDonation() const
 {
-	if (numOfElem == 0)
-		cout << "     Highest donations: $0.00";
-	else
-	{
-		cout << "     Highest donations: $" <<
-			fixed << showpoint << setprecision(2) << getHighestDonation();
-	}
-	cout << endl;
+	cout << "     Highest donations: $" << getHighestDonation() << endl;
 }
 
 // Definition destructor
 
 DonorList::~DonorList()
 {
-	emptyList();
 	delete[] list;
 	list = nullptr;
 }

@@ -7,7 +7,7 @@
 	CS A250
 	October 20, 2018
 
-	Project 1 Part B
+	Project 1 Part C
 */
 
 #include "DonorType.h"

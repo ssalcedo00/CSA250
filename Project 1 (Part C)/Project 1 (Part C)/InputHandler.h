@@ -1,3 +1,15 @@
+/*
+	Phan, Thang
+	Salcedo, Salvador
+	Nguyen, Tony
+	Kim, Ji Soo
+
+	CS A250
+	October 20, 2018
+
+	Project 1 Part C
+*/
+
 #include "DonorList.h"
 
 #include <iostream>
