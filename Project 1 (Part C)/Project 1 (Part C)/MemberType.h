@@ -1,4 +1,5 @@
 /*
+	Plumbus
 	Phan, Thang
 	Salcedo, Salvador
 	Nguyen, Tony
@@ -7,7 +8,7 @@
 	CS A250
 	October 20, 2018
 
-	Project 1 Part C
+	Project 1: Donor List
 */
 
 #ifndef MEMBERTYPE_H
