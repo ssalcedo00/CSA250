@@ -1,7 +1,5 @@
-#ifndef DONORLIST_H
-#define DONORLIST_H
-
 /*
+	Plumbus
 	Phan, Thang
 	Salcedo, Salvador
 	Nguyen, Tony
@@ -10,14 +8,16 @@
 	CS A250
 	October 20, 2018
 
-	Project 1 Part C
+	Project 1: Donor List
 */
+
+#ifndef DONORLIST_H
+#define DONORLIST_H
 
 #include "DonorType.h"
 
-#include<iostream>
+#include <iostream>
 #include <string>		
-#include <iomanip>
 
 using namespace std;
 
@@ -31,7 +31,7 @@ public:
 	DonorList();
 	DonorList(int newCapacity);
 
-	void addDonor(const string & firstName, const string & lastName, int memberNum, double amountDonated);
+	void addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated);
 
 	int getNumberOfDonors() const;
 
@@ -57,7 +57,7 @@ public:
 private:
 
 	// Declaration private member function
-	void resizeList(); // not const because capacity is changing
+	void resizeList(); 
 
 	DonorType *list;
 	int capacity;
@@ -65,4 +65,3 @@ private:
 };
 
 #endif
-
