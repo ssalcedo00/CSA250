@@ -1,4 +1,5 @@
 /*
+	Plumbus
 	Phan, Thang
 	Salcedo, Salvador
 	Nguyen, Tony
@@ -7,27 +8,24 @@
 	CS A250
 	October 20, 2018
 
-	Project 1 Part C
+	Project 1: Donor List
 */
 
 #include "MemberType.h"
-#include <iostream>
-
-using namespace std;
 
 MemberType::MemberType()
 {
 	num = 0;
 }
 
-MemberType::MemberType(const string & firstN, const string & lastN, int no)
+MemberType::MemberType(const string& firstN, const string& lastN, int no)
 {
 	fName = firstN;
 	lName = lastN;
 	num = no;
 }
 
-void MemberType::setMemberInfo(const string & firstN, const string & lastN, int no)
+void MemberType::setMemberInfo(const string& firstN, const string& lastN, int no)
 {
 	fName = firstN;
 	lName = lastN;
@@ -51,13 +49,13 @@ int MemberType::getMembershipNo() const
 
 void MemberType::printName() const
 {
-	cout << fName << ", " << lName << endl;
+	cout << "     " << lName << ", " << fName << endl;
 }
 
 void MemberType::printMemberInfo() const
 {
-	cout << num << " - " << fName << " " << lName << endl;
+	cout << "     " << num << " - " << fName << " " << lName << endl;
 }
 
-MemberType::~MemberType() {}
-
+MemberType::~MemberType()
+{}

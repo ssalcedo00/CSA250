@@ -1,3 +1,16 @@
+/*
+	Plumbus
+	Phan, Thang
+	Salcedo, Salvador
+	Nguyen, Tony
+	Kim, Ji Soo
+
+	CS A250
+	October 20, 2018
+
+	Project 1: Donor List
+*/
+
 #include "DonorList.h"
 
 #include <iostream>
