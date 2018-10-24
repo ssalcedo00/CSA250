@@ -1,4 +1,5 @@
 /*
+	Plumbus
 	Phan, Thang
 	Salcedo, Salvador
 	Nguyen, Tony
@@ -7,24 +8,26 @@
 	CS A250
 	October 20, 2018
 
-	Project 1 Part C
+	Project 1: Donor List
 */
 
 #include "DonorType.h"
 
 DonorType::DonorType() : MemberType()
 {
-	dAmount = 0;
+	dAmount = 0.0;
 }
 
-DonorType::DonorType(const string & donorLName, const string & donorFName, int dNum, double donation) : MemberType(donorLName, donorFName, dNum)
+DonorType::DonorType(const string& donorLName, const string& donorFName,
+	int dNum, double donation) : MemberType(donorLName, donorFName, dNum)
 {
 	dAmount = donation;
 }
 
-void DonorType::setDonorInfo(const string & donorLName, const string & donorFName, int dNum, double donation)
+void DonorType::setDonorInfo(const string& donorLName, const string& donorFName,
+	int dNum, double donation)
 {
-	MemberType::setMemberInfo(donorLName, donorFName, dNum);
+	setMemberInfo(donorLName, donorFName, dNum);
 	dAmount = donation;
 }
 
@@ -40,15 +43,14 @@ double DonorType::getAmountDonated() const
 
 void DonorType::printDonor() const
 {
-	MemberType::printMemberInfo();
+	printMemberInfo();
 }
 
 void DonorType::printDonation() const
 {
-	cout << getLastName() << ", " << getFirstName() << endl;
-	cout << "    " << "Donation amount: $" << fixed << setprecision(2) << getAmountDonated() << endl;
+	printName();
+	cout << "     " << "Donation amount: $" << getAmountDonated() << endl;
 }
 
 DonorType::~DonorType()
-{
-}
+{}

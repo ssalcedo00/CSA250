@@ -1,4 +1,5 @@
 /*
+	Plumbus
 	Phan, Thang
 	Salcedo, Salvador
 	Nguyen, Tony
@@ -7,7 +8,7 @@
 	CS A250
 	October 20, 2018
 
-	Project 1 Part C
+	Project 1: Donor List
 */
 
 #include "DonorList.h"
@@ -16,6 +17,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+
 using namespace std;
 
 void displayMenu();
@@ -64,7 +66,7 @@ void processSelection(DonorList& donorList)
 		int memberNo = 0;
 		double donation = 0.0;
 
-		cout << fixed << showpoint << setprecision(1);
+		cout << fixed << showpoint << setprecision(2);
 
 		switch (selection)
 		{

@@ -1,7 +1,3 @@
-
-#ifndef MEMBERTYPE_H
-#define MEMBERTYPE_H
-
 /*
 	Phan, Thang
 	Salcedo, Salvador
@@ -14,31 +10,35 @@
 	Project 1 Part C
 */
 
+#ifndef MEMBERTYPE_H
+#define MEMBERTYPE_H
+
 #include <string>
+#include <iostream>
+
 using namespace std;
 
 class MemberType
 {
 public:
-	//Constructors
+
 	MemberType();
 	MemberType(const string&, const string&, int num);
 
-	//Void
 	void setMemberInfo(const string&, const string&, int);
-	void printName() const;
-	void printMemberInfo() const;
-
-	//Return values
+	
 	string getFirstName() const;
 	string getLastName() const;
 	int getMembershipNo() const;
 
+	void printName() const;
+	void printMemberInfo() const;
+
 	~MemberType();
+
 private:
 	string fName;
 	string lName;
 	int num;
-
 };
 #endif // !MEMBERTYPE_H
