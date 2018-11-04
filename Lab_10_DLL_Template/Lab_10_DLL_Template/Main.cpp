@@ -1,3 +1,15 @@
+/*
+	Kim, Ji Soo
+	Nguyen, Tony
+	Salcedo, Salvador
+	Phan, Thang
+
+	CS A250
+	November 3, 2018
+
+	Lab 10
+*/
+
 #include "DoublyList.h"
 #include "DoublyList.cpp"
 
