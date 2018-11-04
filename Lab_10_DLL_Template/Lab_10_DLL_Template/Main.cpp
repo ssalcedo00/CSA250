@@ -1,10 +1,12 @@
 #include "DoublyList.h"
+#include "DoublyList.cpp"
 
 #include <iostream>
 #include <string>
 using namespace std;
 
-void testing(DoublyList& aList);
+template <typename T>
+void testing(DoublyList<T>& aList);
 
 int main()
 {
@@ -35,7 +37,8 @@ int main()
 	return 0;
 }
 
-void testing(DoublyList& aList)
+template <typename T>
+void testing(DoublyList<T>& aList)
 {
 	if (aList.isEmpty())
 	{

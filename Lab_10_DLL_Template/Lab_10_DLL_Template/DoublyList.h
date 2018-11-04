@@ -1,3 +1,15 @@
+/*
+	Kim, Ji Soo
+	Nguyen, Tony
+	Salcedo, Salvador
+	Phan, Thang
+
+	CS A250
+	November 3, 2018
+
+	Lab 10
+*/
+
 #ifndef DOUBLYLIST_H
 #define DOUBLYLIST_H
 
@@ -33,9 +45,9 @@ class DoublyList
 public:
 	DoublyList(); 
 		
-	void insert(int elem);
+	void insert(T elem);
 
-	int firstElem() const;
+	T firstElem() const;
 
 	bool isEmpty() const;
 
