@@ -1,3 +1,15 @@
+/*
+	Kim, Ji Soo
+	Nguyen, Tony
+	Salcedo, Salvador
+	Phan, Thang
+
+	CS A250
+	November 3, 2018
+
+	Lab 10
+*/
+
 #include "DoublyList.h"
 
 template <typename T>
@@ -29,15 +41,15 @@ DoublyList<T>::DoublyList()
 }
 
 template <typename T>
-void DoublyList<T>::insert(int elem)
+void DoublyList<T>::insert(T elem)
 {
 	if (count == 0)
 	{
-		first = last = new Node(elem, nullptr, nullptr);
+		first = last = new Node<T>(elem, nullptr, nullptr);
 	}
 	else
 	{
-		last->setNext(new Node(elem, last, nullptr));
+		last->setNext(new Node<T>(elem, last, nullptr));
 		last = last->getNext();
 	}
 
@@ -45,7 +57,7 @@ void DoublyList<T>::insert(int elem)
 }
 
 template <typename T>
-int DoublyList<T>::firstElem() const
+T DoublyList<T>::firstElem() const
 {
 	return first->getData();
 }

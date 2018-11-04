@@ -1,10 +1,24 @@
+/*
+	Kim, Ji Soo
+	Nguyen, Tony
+	Salcedo, Salvador
+	Phan, Thang
+
+	CS A250
+	November 3, 2018
+
+	Lab 10
+*/
+
 #include "DoublyList.h"
+#include "DoublyList.cpp"
 
 #include <iostream>
 #include <string>
 using namespace std;
 
-void testing(DoublyList& aList);
+template <typename T>
+void testing(DoublyList<T>& aList);
 
 int main()
 {
@@ -35,7 +49,8 @@ int main()
 	return 0;
 }
 
-void testing(DoublyList& aList)
+template <typename T>
+void testing(DoublyList<T>& aList)
 {
 	if (aList.isEmpty())
 	{
