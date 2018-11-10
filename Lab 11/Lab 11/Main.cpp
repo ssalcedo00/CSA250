@@ -325,39 +325,97 @@ int main()
 	cout << "\n(The next output section is determined by your implementation.)\n\n";
 
 	// void assign (size_type n, const value_type& val);
+	intList1.assign(3, 2); // prints 2 2 2
+	printList(intList1);
 
 	// void assign (InputIterator first, InputIterator last);	
+	v1 = { 1, 2, 3, 4, 5 };
+	vector<int>::iterator first = v1.begin();
+	vector<int>::iterator last = v1.end();
+	v2 = {};
+	v2.assign(v1.begin(), v1.end());
+	printVector(v2);
 
 	// const_reference back() const;
 	// (Notice that this back function returns a reference.)
+	intList1 = { 5, 4, 3, 2, 1 };
+	int i = intList1.back();
+	cout << i << endl; // print 1
 
 	// void clear() noexcept;
+	v1.clear();
+	v1.push_back(1); // print 1
+	printVector(v1);
 
 	// bool empty() const noexcept;
+	v1.clear();
+	if (!v1.empty())
+		printVector(v1);
+	else
+		cout << "Vector is empty." << endl;
 
 	// const_reference front() const;
+	intList1.front() = 2;
+	printList(intList1); // prints 2 4 3 2 1
 
 	// iterator insert (const_iterator position, const value_type& val);
 	// (Notice that the insert function returns an iterator.)
+	printList(intList1);
+	cout << "Size is: " << intList1.size() << endl;
+	intList1.insert(intList1.begin(), 5);
+	printList(intList1);
+	cout << "Size is: " << intList1.size() << endl;
 
 	// void pop_back();
+	intList1.pop_back();
+	printList(intList1);
+	cout << "Size is: " << intList1.size() << endl;
 
 	// void pop_front();
+	intList1.pop_front();
+	printList(intList1);
+	cout << "Size is: " << intList1.size() << endl;
 
-	// void push_front (const value_type& val);
+	// void push_front (const value_type& val); 
+	intList1.push_front(9);
+	printList(intList1);
+	cout << "Size is: " << intList1.size() << endl;
 
 	// void remove (const value_type& val);
+	intList1 = { 1, 1, 1, 1, 1 };
+	printList(intList1);
+	intList1.remove(1);
+	if (intList1.empty())
+		cout << "List is empty." << endl;
+	else
+		printList(intList1);
 
 	// void reverse() noexcept;
+	intList1 = { 1, 2, 3, 4, 5 };
+	intList1.reverse();
+	printList(intList1);
 
 	// void splice (const_iterator position, list& x);
+	intList2 = { 6, 7, 8, 9, 10 };
+	intList1.splice(intList1.begin(), intList2);
+	printList(intList1); // prints 6 7 8 9 10 5 4 3 2 1
 
 	// void splice (const_iterator position, list& x, const_iterator i);
-	
+	list<int>::iterator it = intList1.begin();
+	intList2.splice(intList2.begin(), intList1, it);
+	printList(intList2); // prints 6
+
 	// void splice (const_iterator position, list& x, const_iterator first, const_iterator last);
+	it = intList1.begin();
+	it++;
+	it++;
+	it++;
+	intList1.splice(intList1.begin(), intList1, it, intList1.end());
+	printList(intList1);
 
 	// void swap (list& x);
-
+	intList1.swap(intList2);
+	printList(intList1); //prints 6
 
 	cout << "\n\n----------------------------------------------------";
 
