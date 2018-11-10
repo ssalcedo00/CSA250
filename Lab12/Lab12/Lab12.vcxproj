@@ -18,19 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DoublyList.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DoublyList.cpp" />
-    <ClCompile Include="Functions.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Testing.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C8D6A511-34D6-4281-8ED0-3EEA580BFE0C}</ProjectGuid>
-    <RootNamespace>Lab5DoublylinkedList</RootNamespace>
+    <ProjectGuid>{0E1641FC-A869-4A22-82EC-8016BD0B00EA}</ProjectGuid>
+    <RootNamespace>Lab12</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,6 +114,12 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
