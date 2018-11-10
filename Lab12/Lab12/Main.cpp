@@ -85,7 +85,7 @@ int main()
 	multiplesOfTen(m7);
 	printMap(m7);
 
-	/*
+	
 	cout << "\n\nTEST: afterFive ================================\n\n";
 
 	multiset<int> ms1{ 1, 2, 3, 5, 6 },
@@ -111,13 +111,16 @@ int main()
 	afterFive(ms3, ms30);
 	copy(ms30.begin(), ms30.end(), printout);
 
+	
 	cout << "\n\n      Expected: (empty - there should be no output)\n=> Your output: ";
 	afterFive(ms4, ms40);
 	copy(ms40.begin(), ms40.end(), printout);
 
+	
 	cout << "\n\n      Expected: (empty - there should be no output)\n=> Your output: ";
 	afterFive(ms5, ms50);
 	copy(ms50.begin(), ms50.end(), printout);
+	
 
 	cout << "\n\n      Expected: 7 8 9 45 56 56 67 78 92\n=> Your output: ";
 	afterFive(ms6, ms60);
@@ -125,7 +128,7 @@ int main()
 
 	cout << endl << endl;
 
-	*/
+
 	cout << endl;
 	system("pause");
 	return 0;
