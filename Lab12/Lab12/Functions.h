@@ -37,16 +37,11 @@ void multiplesOfTen(map<int, int>& aMap) {
 
 // Definition of function afterFive
 void afterFive(const multiset<int>& base, multiset<int>& copy) {
-
 	multiset<int>::reverse_iterator rBase = base.rbegin();
-	multiset<int>::iterator baseIter = base.begin();
+	multiset<int>::const_iterator iter = base.cbegin();
 
-	if (*rBase != 5 && *baseIter < 5) {
-		while (*baseIter < 6) {
-			++baseIter;
-			if (*baseIter >= 6)
-				copy.insert(baseIter, base.end());
-		}
+	if(*rBase > 5) {
+		
 	}
 }
 #endif
