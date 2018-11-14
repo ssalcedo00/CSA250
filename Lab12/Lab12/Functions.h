@@ -1,5 +1,13 @@
 /*
-	(name header)
+	Kim Ji Soo
+	Salvador, Salcedo
+	Pham, Thang
+	Nguyen, Tony
+
+	CS A250
+	November 13, 2018
+
+	Lab 13
 */
 
 #ifndef FUNCTIONS_H
@@ -13,7 +21,7 @@ using namespace std;
 // Definition of function difference
 int difference(set<int> aSet) {
 	int smallest, largest;
-	
+		
 	smallest = *(aSet.cbegin()); //first element of the set, ie: smallest
 	largest = *(aSet.rbegin()); //last element of the set, ie: biggest
 	
@@ -23,7 +31,9 @@ int difference(set<int> aSet) {
 // Definition of function multiplesOfTen
 void multiplesOfTen(map<int, int>& aMap) {
 	map<int, int>::iterator iter = aMap.begin();
+
 	int temp = 0;
+
 	while (iter != aMap.cend()) {
 		if (iter->first % 10 == 0) {
 			temp = iter->first;
