@@ -17,38 +17,62 @@
 
 DonorList::DonorList()
 {
-	capacity = CAP;
-	numOfElem = 0;
-	list = new DonorType[capacity];
+	donors = new list<DonorType>;
 }
 
-// Definition overloaded constructor
+// Definition copy constructor
 
-DonorList::DonorList(int newCapacity) 
+DonorList::DonorList(const list<DonorType>& otherDonors)
 {
-	capacity = newCapacity;
-	numOfElem = 0;
-	list = new DonorType[capacity];
+	list<DonorType> donors;
+	donors(otherDonors);
 }
+
+// Definition of overloaded assignment operator
+
+DonorList& DonorList::operator=(const list<DonorType>& otherDonors)
+{
+	if (otherList& != this)
+	{
+		donors(otherDonors);
+	}
+	else
+		cerr << "Attempted assignment to itself." << endl;
+
+	return *this;
+}
+
 
 // Definition member function addDonor
 
 void DonorList::addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated)
 {
-	if (numOfElem >= capacity)
-		resizeList();
+	DonorType otherDonor(firstName, lastName, memberNum, amountDonated);
 
-	int idx = 0;
+	// checks if it's empty to pushback new DonorType -> donors
+	if (donors.empty())
+	{
+		donors.push_back(otherDonor);
+	}
+	else
+	{
+		list<DonorType>::iterator iterDonors = donors.begin();
+		size_t originalSize = donors.size();
 
-	while (list[idx].getMembershipNo() < memberNum && idx < numOfElem)
-		idx++;
+		// put in membership Number order
+		while (iterDonors != donors.end() && donors.size() <= originalSize)
+		{
+			if (donors.getMembershipNo() < memberNo)
+			{
+				iterDonors++;
+			}
+			else
+			{
+				donors.insert(otherDonor, iterDonors);
+			}
+		}
 
-	for (int i = numOfElem; i > idx; i--)
-		list[i] = list[i - 1];
-
-	list[idx].setDonorInfo(firstName, lastName, memberNum, amountDonated);
-
-	numOfElem++;
+	}
 }
 
 // Definition member function getNumberOfDonors
@@ -99,21 +123,6 @@ bool DonorList::searchID(int memberNum) const
 	while (i < numOfElem)
 	{
 		if (list[i].getMembershipNo() == memberNum)
-			return true;
-		i++;
-	}
-	return false;
-}
-
-// Definition member function searchName
-
-bool DonorList::searchName(const string& lastName) const
-{
-	int i = 0;
-
-	while (i < numOfElem)
-	{
-		if (list[i].getLastName() == lastName)
 			return true;
 		i++;
 	}
@@ -231,20 +240,4 @@ DonorList::~DonorList()
 {
 	delete[] list;
 	list = nullptr;
-}
-
-// Definition member function resizeList
-
-void DonorList::resizeList()
-{
-	DonorType * newList = new DonorType[capacity * 2];
-
-	for (int i = 0; i < numOfElem; i++)
-		newList[i] = list[i];
-
-	delete[] list;
-	list = newList;
-	capacity *= 2;
-
-	newList = nullptr;
 }

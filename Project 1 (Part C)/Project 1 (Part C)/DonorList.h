@@ -16,12 +16,12 @@
 
 #include "DonorType.h"
 
+#include <list>
+#include <algorithm>
 #include <iostream>
 #include <string>		
 
 using namespace std;
-
-const int CAP = 20;
 
 class DonorList	
 {
@@ -29,7 +29,9 @@ public:
 
 	// Declarations public member functions
 	DonorList();
-	DonorList(int newCapacity);
+	DonorList(const list<DonorType*>& otherDonors);
+
+	DonorList& operator=(const list<DonorType>& otherDonors);
 
 	void addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated);
 
@@ -40,7 +42,6 @@ public:
 
 	bool isEmpty() const;
 	bool searchID(int memberNum) const;
-	bool searchName(const string& lastName) const;
 
 	void deleteDonor(int memberNum);
 	void emptyList();
@@ -57,11 +58,7 @@ public:
 private:
 
 	// Declaration private member function
-	void resizeList(); 
-
-	DonorType *list;
-	int capacity;
-	int numOfElem;
+	list<DonorType*> donors;
 };
 
 #endif

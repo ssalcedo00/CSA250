@@ -116,25 +116,8 @@ void processSelection(DonorList& donorList)
 			}
 			break;
 
-			// Find a donor by name
-		case 3:
-			if (donorList.isEmpty())
-				cerr << "  => There are no donors in the list." << endl;
-			else
-			{
-				cout << "  => Enter donor's last name: ";
-				cin >> lName;
-				lName.at(0) = toupper(lName.at(0));
-				cout << endl;
-				if (!donorList.searchName(lName))
-					cout << "  => There are no donors with this last name.\n";
-				else
-					donorList.printDonorByName(lName);
-			}
-			break;
-
 			// Find a donor by membership number
-		case 4:
+		case 3:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
 			else
@@ -150,7 +133,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print all donors
-		case 5:
+		case 4:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
 			else
@@ -158,7 +141,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print a donor's donation
-		case 6:
+		case 5:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
 			else
@@ -174,7 +157,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print total donations
-		case 7:
+		case 6:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
 			else
@@ -182,7 +165,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print highest donation and donor's information
-		case 8:
+		case 7:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
 			else
