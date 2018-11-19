@@ -45,7 +45,7 @@ class DoublyList
 public:
 	DoublyList(); 
 		
-	void insert(T elem);
+	void insert(const T& elem);
 
 	T firstElem() const;
 

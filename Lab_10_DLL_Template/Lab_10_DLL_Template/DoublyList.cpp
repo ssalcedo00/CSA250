@@ -41,7 +41,7 @@ DoublyList<T>::DoublyList()
 }
 
 template <typename T>
-void DoublyList<T>::insert(T elem)
+void DoublyList<T>::insert(const T& elem)
 {
 	if (count == 0)
 	{
