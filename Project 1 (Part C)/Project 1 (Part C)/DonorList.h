@@ -29,9 +29,9 @@ public:
 
 	// Declarations public member functions
 	DonorList();
-	DonorList(const list<DonorType*>& otherDonors);
+	DonorList(list<DonorType>* otherDonors);
 
-	DonorList& operator=(const list<DonorType>& otherDonors);
+	DonorList& operator=(list<DonorType>* otherDonors);
 
 	void addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated);
 
@@ -58,7 +58,7 @@ public:
 private:
 
 	// Declaration private member function
-	list<DonorType*> donors;
+	list<DonorType>* donors;
 };
 
-#endif
+#endif 
