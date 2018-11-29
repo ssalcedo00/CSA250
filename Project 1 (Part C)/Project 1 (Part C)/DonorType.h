@@ -22,9 +22,13 @@
 class DonorType : public MemberType
 {
 public:
+
 	//Constructors
 	DonorType();
 	DonorType(const string& lName, const string& FName, int newID, double newDAmount);
+
+	//Overloaded assignment operator
+	bool operator==(int memberNum) const;
 
 	//Modifier Functions
 	void setDonorInfo(const string& lName, const string& FName, int newID, double newDAmount);

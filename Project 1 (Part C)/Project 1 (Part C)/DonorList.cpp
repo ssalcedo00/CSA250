@@ -17,53 +17,59 @@
 
 DonorList::DonorList()
 {
-	list<DonorType*> donors;
+	donors = new list<DonorType>;
 }
 
 // Definition copy constructor
 
-DonorList::DonorList(list<DonorType>* otherDonors)
+DonorList::DonorList(const DonorList& otherList)
 {
-	list<DonorType>* donors(otherDonors);
+	donors = new list<DonorType>;
+	*donors = *(otherList.donors);
 }
 
 // Definition of overloaded assignment operator
 
-DonorList& DonorList::operator=(list<DonorType>* otherDonors)
+DonorList& DonorList::operator=(const DonorList& otherDonors)
 {
-	list<DonorType>* donors(otherDonors);
+	if (&otherDonors != this)
+	{
+		*donors = *otherDonors.donors;
+	}
+	else
+		cerr << "Attempted assignment to itself.";
+
 	return *this;
 }
 
 
 // Definition member function addDonor
 
-void DonorList::addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated)
+void DonorList::addDonor(const string& firstName, 
+	const string& lastName, int memberNum,
+	double amountDonated) const
 {
-	DonorType otherDonor(firstName, lastName, memberNum, amountDonated);
-
+	
 	// checks if it's empty to pushback new DonorType -> donors
 	if (donors->empty())
 	{
-		donors->push_back(otherDonor);
+		donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
 	}
 	else
 	{
-		list<DonorType>::iterator iterDonors = donors->begin();
-		size_t originalSize = donors->size();
+		auto iterDonors = donors->begin();
+		auto iterEnd = donors->end();
 
 		// put in membership Number order
-		while (iterDonors != donors->end() && donors->size() <= originalSize)
-		{
-			if (otherDonor.getMembershipNo() < memberNum)
-			{
-				iterDonors++;
-			}
-			else
-			{
-				donors->insert(iterDonors, otherDonor); // (position, value)
-			}
-		}
+		
+		while ((iterDonors != iterEnd) && (iterDonors->getMembershipNo() < memberNum))
+			iterDonors++;
+
+		if (iterDonors == iterEnd)
+			donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
+		else
+			donors->insert(iterDonors,
+				DonorType(firstName, lastName, memberNum, amountDonated));
 
 	}
 }
@@ -72,7 +78,7 @@ void DonorList::addDonor(const string& firstName, const string& lastName, int me
 
 int DonorList::getNumberOfDonors() const
 {
-	return donors->size();
+	return (donors->size());
 }
 
 // Definition member function getTotalDonations
@@ -138,7 +144,8 @@ bool DonorList::searchID(int memberNum) const
 
 void DonorList::deleteDonor(int memberNum)
 {
-	donors->erase(donors->begin(), donors->end());
+	auto iter = find(donors->cbegin(), donors->cend(), memberNum);
+	donors->erase(iter);
 }
 
 // Definition member function emptyList

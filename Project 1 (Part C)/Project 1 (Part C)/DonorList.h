@@ -29,11 +29,13 @@ public:
 
 	// Declarations public member functions
 	DonorList();
-	DonorList(list<DonorType>* otherDonors);
+	DonorList(const DonorList& otherDonors);
 
-	DonorList& operator=(list<DonorType>* otherDonors);
+	DonorList& operator=(const DonorList& otherDonors);
 
-	void addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated);
+	void addDonor(const string& firstName, 
+		const string& lastName, int memberNum,
+		double amountDonated) const;
 
 	int getNumberOfDonors() const;
 

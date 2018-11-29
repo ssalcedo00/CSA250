@@ -24,6 +24,11 @@ DonorType::DonorType(const string& donorLName, const string& donorFName,
 	dAmount = donation;
 }
 
+bool DonorType::operator==(int memberNum) const
+{
+	return (this->getMembershipNo() == memberNum);
+}
+
 void DonorType::setDonorInfo(const string& donorLName, const string& donorFName,
 	int dNum, double donation)
 {
