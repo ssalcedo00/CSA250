@@ -6,9 +6,9 @@
 	Kim, Ji Soo
 
 	CS A250
-	October 20, 2018
+	December 1, 2018
 
-	Project 1: Donor List
+	Project 2: Donor List
 */
 
 #ifndef DONORLIST_H
@@ -45,8 +45,8 @@ public:
 	bool isEmpty() const;
 	bool searchID(int memberNum) const;
 
-	void deleteDonor(int memberNum);
-	void emptyList();
+	void deleteDonor(int memberNum) const;
+	void emptyList() const;
 
 	void printAllDonors() const;
 	void printDonorByName(const string& lastName) const;

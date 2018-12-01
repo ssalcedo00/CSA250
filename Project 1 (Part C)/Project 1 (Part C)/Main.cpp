@@ -6,10 +6,11 @@
 	Kim, Ji Soo
 
 	CS A250
-	October 20, 2018
+	December 1, 2018
 
-	Project 1: Donor List
+	Project 2: Donor List
 */
+
 
 #include "DonorList.h"
 #include "InputHandler.h"
@@ -44,13 +45,12 @@ void displayMenu()
 	cout << "\nSelect one of the following:\n\n";
 	cout << "    1. Add a donor" << endl;
 	cout << "    2. Delete a donor" << endl;
-	cout << "    3. Find a donor by last name" << endl;
-	cout << "    4. Find a donor by membership number" << endl;
-	cout << "    5. Print all donors" << endl;
-	cout << "    6. Print a donor's donation" << endl;
-	cout << "    7. Print total donations" << endl;
-	cout << "    8. Print highest donation" << endl;
-	cout << "    9: To exit" << endl;
+	cout << "    3. Find a donor by membership number" << endl;
+	cout << "    4. Print all donors" << endl;
+	cout << "    5. Print a donor's donation" << endl;
+	cout << "    6. Print total donations" << endl;
+	cout << "    7. Print highest donation" << endl;
+	cout << "    8: To exit" << endl;
 }
 
 void processSelection(DonorList& donorList)
@@ -60,7 +60,7 @@ void processSelection(DonorList& donorList)
 	cin >> selection;
 	cout << endl;
 
-	while (selection != 9)
+	while (selection != 8)
 	{
 		string fName, lName;
 		int memberNo = 0;
@@ -185,6 +185,6 @@ void processSelection(DonorList& donorList)
 		cout << endl;
 	}
 
-	if (selection == 9)
+	if (selection == 8)
 		cout << "  => Thank you for visiting our site!" << endl;
 }

@@ -6,10 +6,11 @@
 	Kim, Ji Soo
 
 	CS A250
-	October 20, 2018
+	December 1, 2018
 
-	Project 1: Donor List
+	Project 2: Donor List
 */
+
 
 #ifndef MEMBERTYPE_H
 #define MEMBERTYPE_H
@@ -24,9 +25,9 @@ class MemberType
 public:
 
 	MemberType();
-	MemberType(const string&, const string&, int num);
+	MemberType(const string& fName, const string& lName, int membershipNo);
 
-	void setMemberInfo(const string&, const string&, int);
+	void setMemberInfo(const string& fName, const string& lName, int membershipNo);
 	
 	string getFirstName() const;
 	string getLastName() const;
