@@ -18,14 +18,16 @@ MemberType::MemberType()
 	num = 0;
 }
 
-MemberType::MemberType(const string& firstN, const string& lastN, int no)
+MemberType::MemberType(const string& firstN,
+	const string& lastN, int no)
 {
 	fName = firstN;
 	lName = lastN;
 	num = no;
 }
 
-void MemberType::setMemberInfo(const string& firstN, const string& lastN, int no)
+void MemberType::setMemberInfo(const string& firstN,
+	const string& lastN, int no)
 {
 	fName = firstN;
 	lName = lastN;
