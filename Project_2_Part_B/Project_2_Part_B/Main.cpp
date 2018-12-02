@@ -70,7 +70,9 @@ void processSelection(DonorList& donorList)
 
 		switch (selection)
 		{
+
 			// Add a donor
+
 		case 1:
 			cout << "  => Enter donor's first name: ";
 			cin >> fName;
@@ -83,11 +85,13 @@ void processSelection(DonorList& donorList)
 			cout << "  => Enter amount donated: $ ";
 			cin >> donation;
 			cout << endl;
+
 			/*
 			We are using search here because the addDonor function
 			simply adds a donor at the end of the list without
 			checking if the donor is already in the list.
 			*/
+
 			if (donorList.searchID(memberNo))
 				cerr << "  => This donor is already in the list." << endl;
 			else
@@ -98,6 +102,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Delete a donor
+
 		case 2:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
@@ -117,6 +122,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Find a donor by membership number
+
 		case 3:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
@@ -133,6 +139,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print all donors
+
 		case 4:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
@@ -141,6 +148,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print a donor's donation
+
 		case 5:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
@@ -157,6 +165,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print total donations
+
 		case 6:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;
@@ -165,6 +174,7 @@ void processSelection(DonorList& donorList)
 			break;
 
 			// Print highest donation and donor's information
+
 		case 7:
 			if (donorList.isEmpty())
 				cerr << "  => There are no donors in the list." << endl;

@@ -42,7 +42,6 @@ DonorList& DonorList::operator=(const DonorList& otherDonors)
 	return *this;
 }
 
-
 // Definition member function addDonor
 
 void DonorList::addDonor(const string& firstName, 
@@ -152,26 +151,6 @@ void DonorList::printAllDonors() const
 		iterDonor->printDonor();
 }
 
-// Definition member function printDonorByName
-
-void DonorList::printDonorByName(const string& lastName) const
-{
-	bool found = false;
-
-	auto iterDonor = donors->begin();
-	auto iterEnd = donors->end();
-
-	for (iterDonor; iterDonor!= iterEnd; iterDonor++)
-		if (iterDonor->getLastName() == lastName)
-		{
-			iterDonor->printDonor();
-			found = true;
-		}
-
-	if (!found)
-		cout << "There are no donors with this last name.\n";
-}
-
 // Definition member function printDonor
 
 void DonorList::printDonor(int memberNum) const
@@ -200,6 +179,7 @@ void DonorList::printTotalDonations() const
 {
 	cout << "     Total donations: $" << getTotalDonations() << endl;
 }
+
 // Definition member function printHighestDonation
 
 void DonorList::printHighestDonation() const
