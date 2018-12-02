@@ -18,8 +18,9 @@ DonorType::DonorType() : MemberType()
 	dAmount = 0.0;
 }
 
-DonorType::DonorType(const string& donorLName, const string& donorFName,
-	int dNum, double donation) : MemberType(donorLName, donorFName, dNum)
+DonorType::DonorType(const string& donorLName,
+	const string& donorFName, int dNum, double donation) :
+	MemberType(donorLName, donorFName, dNum)
 {
 	dAmount = donation;
 }
@@ -29,8 +30,8 @@ bool DonorType::operator==(int memberNum) const
 	return (getMembershipNo() == memberNum);
 }
 
-void DonorType::setDonorInfo(const string& donorLName, const string& donorFName,
-	int dNum, double donation)
+void DonorType::setDonorInfo(const string& donorLName, 
+	const string& donorFName, int dNum, double donation)
 {
 	setMemberInfo(donorLName, donorFName, dNum);
 	dAmount = donation;

@@ -11,7 +11,6 @@
 	Project 2: Donor List
 */
 
-
 #ifndef MEMBERTYPE_H
 #define MEMBERTYPE_H
 
