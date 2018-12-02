@@ -6,9 +6,9 @@
 	Kim, Ji Soo
 
 	CS A250
-	October 20, 2018
+	December 1, 2018
 
-	Project 1: Donor List
+	Project 2: Donor List
 */
 
 #ifndef DONORLIST_H
@@ -29,11 +29,13 @@ public:
 
 	// Declarations public member functions
 	DonorList();
-	DonorList(const list<DonorType*>& otherDonors);
+	DonorList(const DonorList& otherDonors);
 
-	DonorList& operator=(const list<DonorType>& otherDonors);
+	DonorList& operator=(const DonorList& otherDonors);
 
-	void addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated);
+	void addDonor(const string& firstName, 
+		const string& lastName, int memberNum,
+		double amountDonated) const;
 
 	int getNumberOfDonors() const;
 
@@ -43,8 +45,8 @@ public:
 	bool isEmpty() const;
 	bool searchID(int memberNum) const;
 
-	void deleteDonor(int memberNum);
-	void emptyList();
+	void deleteDonor(int memberNum) const;
+	void emptyList() const;
 
 	void printAllDonors() const;
 	void printDonorByName(const string& lastName) const;
@@ -58,7 +60,7 @@ public:
 private:
 
 	// Declaration private member function
-	list<DonorType*> donors;
+	list<DonorType>* donors;
 };
 
-#endif
+#endif 

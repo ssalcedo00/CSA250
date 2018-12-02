@@ -6,9 +6,9 @@
 	Kim, Ji Soo
 
 	CS A250
-	October 20, 2018
+	December 1, 2018
 
-	Project 1: Donor List
+	Project 2: Donor List
 */
 
 #include "DonorList.h"
@@ -17,28 +17,27 @@
 
 DonorList::DonorList()
 {
-	list<DonorType*> donors;
+	donors = new list<DonorType>;
 }
 
 // Definition copy constructor
 
-DonorList::DonorList(const list<DonorType*>& otherDonors)
+DonorList::DonorList(const DonorList& otherList)
 {
-	list<DonorType*> donors(otherDonors);
+	donors = new list<DonorType>;
+	*donors = *(otherList.donors);
 }
 
 // Definition of overloaded assignment operator
 
-DonorList& DonorList::operator=(const list<DonorType>& otherDonors)
+DonorList& DonorList::operator=(const DonorList& otherDonors)
 {
-	if (donors.size() != otherDonors.size())
+	if (&otherDonors != this)
 	{
-		list<DonorType> donors(otherDonors);
+		*donors = *otherDonors.donors;
 	}
 	else
-	{
-		if(donors->)
-	}
+		cerr << "Attempted assignment to itself.";
 
 	return *this;
 }
@@ -46,33 +45,30 @@ DonorList& DonorList::operator=(const list<DonorType>& otherDonors)
 
 // Definition member function addDonor
 
-void DonorList::addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated)
+void DonorList::addDonor(const string& firstName, 
+	const string& lastName, int memberNum,
+	double amountDonated) const
 {
-	DonorType otherDonor;
-
 	// checks if it's empty to pushback new DonorType -> donors
-	if (donors.empty())
+	if (donors->empty())
 	{
-		donors.push_back(otherDonor);
+		donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
 	}
 	else
 	{
-		list<DonorType>::iterator iterDonors = donors.begin();
-		size_t originalSize = donors.size();
+		auto iterDonors = donors->begin();
+		auto iterEnd = donors->end();
 
 		// put in membership Number order
-		while (iterDonors != donors.end() && donors.size() <= originalSize)
-		{
-			if (otherDonor.getMembershipNo() < memberNum)
-			{
-				iterDonors++;
-			}
-			else
-			{
-				donors.insert(iterDonors, otherDonor); // (position, value)
-			}
-		}
+		
+		while ((iterDonors != iterEnd) && (iterDonors->getMembershipNo() < memberNum))
+			iterDonors++;
 
+		if (iterDonors == iterEnd)
+			donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
+		else
+			donors->insert(iterDonors,
+				DonorType(firstName, lastName, memberNum, amountDonated));
 	}
 }
 
@@ -80,30 +76,38 @@ void DonorList::addDonor(const string& firstName, const string& lastName, int me
 
 int DonorList::getNumberOfDonors() const
 {
-	return numOfElem;
+	return (donors->size());
 }
 
 // Definition member function getTotalDonations
 
 double DonorList::getTotalDonations() const
 {
-	double total = 0.0;
+	auto iterDonor = donors->begin();
+	auto iterEnd = donors->end();
 
-	for (int i = 0; i < numOfElem; i++)
-		total += list[i].getAmountDonated();
+	double sum = 0.0;
 
-	return total;
+	for (iterDonor; iterDonor != iterEnd; iterDonor++)
+	{
+		sum += iterDonor->getAmountDonated();
+	}
+
+	return sum;
 }
 
 // Definition member function getHighestDonation
 
 double DonorList::getHighestDonation() const
 {
+	auto iterDonor = donors->begin();
+	auto iterEnd = donors->end();
+
 	double highest = 0.0;
 
-	for (int i = 0; i < numOfElem; i++)
-		if (list[i].getAmountDonated() > highest)
-			highest = list[i].getAmountDonated();
+	for (iterDonor; iterDonor != iterEnd; iterDonor++)
+		if (iterDonor->getAmountDonated() > highest)
+			highest = iterDonor->getAmountDonated();
 
 	return highest;
 }
@@ -112,54 +116,40 @@ double DonorList::getHighestDonation() const
 
 bool DonorList::isEmpty() const
 {
-	return (numOfElem == 0);
+	return donors->empty();
 }
 
 // Definition member function searchID
 
 bool DonorList::searchID(int memberNum) const
-{
-	int i = 0;
-
-	while (i < numOfElem)
-	{
-		if (list[i].getMembershipNo() == memberNum)
-			return true;
-		i++;
-	}
-	return false;
+{	
+	return (find(donors->begin(), donors->end(), memberNum) != donors->end());
 }
 
 // Definition member function deleteDonor
 
-void DonorList::deleteDonor(int memberNum)
+void DonorList::deleteDonor(int memberNum) const
 {
-	if (numOfElem > 1)
-	{
-		int idx = 0;
-
-		while (idx < numOfElem && list[idx].getMembershipNo() != memberNum)
-			idx++;
-
-		for (int i = idx; i < numOfElem - 1; i++)
-			list[i] = list[i + 1];
-	}
-	numOfElem--;
+	auto iter = find(donors->cbegin(), donors->cend(), memberNum);
+	donors->erase(iter);
 }
 
 // Definition member function emptyList
 
-void DonorList::emptyList()
+void DonorList::emptyList() const
 {
-	numOfElem = 0;
+	donors->clear();
 }
 
 // Definition member function printAllDonors
 
 void DonorList::printAllDonors() const
 {
-	for (int i = 0; i < numOfElem; i++)
-		list[i].printDonor();
+	auto iterDonor = donors->begin();
+	auto iterEnd = donors->end();
+
+	for (iterDonor; iterDonor != iterEnd; iterDonor++)
+		iterDonor->printDonor();
 }
 
 // Definition member function printDonorByName
@@ -168,10 +158,13 @@ void DonorList::printDonorByName(const string& lastName) const
 {
 	bool found = false;
 
-	for (int i = 0; i < numOfElem; ++i)
-		if (list[i].getLastName() == lastName)
+	auto iterDonor = donors->begin();
+	auto iterEnd = donors->end();
+
+	for (iterDonor; iterDonor!= iterEnd; iterDonor++)
+		if (iterDonor->getLastName() == lastName)
 		{
-			list[i].printDonor();
+			iterDonor->printDonor();
 			found = true;
 		}
 
@@ -183,20 +176,10 @@ void DonorList::printDonorByName(const string& lastName) const
 
 void DonorList::printDonor(int memberNum) const
 {
-	if (numOfElem > 0)
+	if (donors->size() > 0)
 	{
-		bool found = false;
-		int i = 0;
-
-		while (i < numOfElem && !found)
-		{
-			if (memberNum == list[i].getMembershipNo())
-			{
-				list[i].printDonor();
-				found = true;
-			}
-			i++;
-		}
+		auto iter = find(donors->begin(), donors->end(), memberNum);
+		iter->printDonor();
 	}
 }
 
@@ -204,22 +187,11 @@ void DonorList::printDonor(int memberNum) const
 
 void DonorList::printDonation(int memberNum) const
 {
-	if (numOfElem > 0)
+	if (donors->size() > 0)
 	{
-		int i = 0;
-		bool found = false;
-
-		while (!found && i < numOfElem)
-		{
-			if (list[i].getMembershipNo() == memberNum)
-			{
-				list[i].printDonation();
-				found = true;
-			}
-			i++;
-		}
+		auto iter = find(donors->begin(), donors->end(), memberNum);
+		iter->printDonation();
 	}
-	cout << endl;
 }
 
 // Definition member function printTotalDonations
@@ -239,6 +211,5 @@ void DonorList::printHighestDonation() const
 
 DonorList::~DonorList()
 {
-	delete[] list;
-	list = nullptr;
+	donors->~list();
 }
