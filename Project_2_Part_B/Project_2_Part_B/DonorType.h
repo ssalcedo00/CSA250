@@ -16,9 +16,6 @@
 
 #include "MemberType.h"
 
-#include <iostream>
-#include <string>
-
 class DonorType : public MemberType
 {
 public:
@@ -26,7 +23,8 @@ public:
 	//Constructors
 
 	DonorType();
-	DonorType(const string& lName, const string& FName, int newID, double newDAmount);
+	DonorType(const string& lName, const string& FName,
+		int newID, double newDAmount);
 
 	//Overloaded assignment operator
 
@@ -34,7 +32,8 @@ public:
 
 	//Modifier Functions
 
-	void setDonorInfo(const string& lName, const string& FName, int newID, double newDAmount);
+	void setDonorInfo(const string& lName, const string& FName, 
+		int newID, double newDAmount);
 	void setAmountDonated(double newDAmount);
 
 	//Accessor Functions

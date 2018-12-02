@@ -33,9 +33,7 @@ DonorList::DonorList(const DonorList& otherList)
 DonorList& DonorList::operator=(const DonorList& otherDonors)
 {
 	if (&otherDonors != this)
-	{
 		*donors = *otherDonors.donors;
-	}
 	else
 		cerr << "Attempted assignment to itself.";
 
@@ -51,7 +49,8 @@ void DonorList::addDonor(const string& firstName,
 	// checks if it's empty to pushback new DonorType -> donors
 	if (donors->empty())
 	{
-		donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
+		donors->push_back(DonorType(firstName, 
+			lastName, memberNum, amountDonated));
 	}
 	else
 	{
@@ -60,14 +59,17 @@ void DonorList::addDonor(const string& firstName,
 
 		// put in membership Number order
 		
-		while ((iterDonors != iterEnd) && (iterDonors->getMembershipNo() < memberNum))
+		while ((iterDonors != iterEnd) && 
+			(iterDonors->getMembershipNo() < memberNum))
 			iterDonors++;
 
 		if (iterDonors == iterEnd)
-			donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
+			donors->push_back(DonorType(firstName,
+				lastName, memberNum, amountDonated));
 		else
 			donors->insert(iterDonors,
-				DonorType(firstName, lastName, memberNum, amountDonated));
+				DonorType(firstName, lastName, 
+					memberNum, amountDonated));
 	}
 }
 
@@ -88,9 +90,7 @@ double DonorList::getTotalDonations() const
 	double sum = 0.0;
 
 	for (iterDonor; iterDonor != iterEnd; iterDonor++)
-	{
 		sum += iterDonor->getAmountDonated();
-	}
 
 	return sum;
 }
@@ -122,14 +122,16 @@ bool DonorList::isEmpty() const
 
 bool DonorList::searchID(int memberNum) const
 {	
-	return (find(donors->begin(), donors->end(), memberNum) != donors->end());
+	return (find(donors->begin(), donors->end(), 
+		memberNum) != donors->end());
 }
 
 // Definition member function deleteDonor
 
 void DonorList::deleteDonor(int memberNum) const
 {
-	auto iter = find(donors->cbegin(), donors->cend(), memberNum);
+	auto iter = find(donors->cbegin(), 
+		donors->cend(), memberNum);
 	donors->erase(iter);
 }
 
@@ -157,7 +159,8 @@ void DonorList::printDonor(int memberNum) const
 {
 	if (donors->size() > 0)
 	{
-		auto iter = find(donors->begin(), donors->end(), memberNum);
+		auto iter = find(donors->begin(),
+			donors->end(), memberNum);
 		iter->printDonor();
 	}
 }
@@ -168,7 +171,8 @@ void DonorList::printDonation(int memberNum) const
 {
 	if (donors->size() > 0)
 	{
-		auto iter = find(donors->begin(), donors->end(), memberNum);
+		auto iter = find(donors->begin(), 
+			donors->end(), memberNum);
 		iter->printDonation();
 	}
 }
