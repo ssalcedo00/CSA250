@@ -58,7 +58,7 @@ public:
 private:
 
 	// Declaration private member function
-	list<DonorType*> donors;
+	list<DonorType> * donors;
 };
 
 #endif

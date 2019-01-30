@@ -48,20 +48,20 @@ DonorList& DonorList::operator=(const list<DonorType>& otherDonors)
 
 void DonorList::addDonor(const string& firstName, const string& lastName, int memberNum, double amountDonated)
 {
-	DonorType otherDonor;
+	DonorType otherDonor(firstName, lastName, memberNum, amountDonated);
 
 	// checks if it's empty to pushback new DonorType -> donors
-	if (donors.empty())
+	if (donors->empty())
 	{
-		donors.push_back(otherDonor);
+		donors->push_back(otherDonor);
 	}
 	else
 	{
-		list<DonorType>::iterator iterDonors = donors.begin();
-		size_t originalSize = donors.size();
+		list<DonorType>::iterator iterDonors = donors->begin();
+		size_t originalSize = donors->size();
 
 		// put in membership Number order
-		while (iterDonors != donors.end() && donors.size() <= originalSize)
+		while (iterDonors != donors->end() && donors->size() <= originalSize)
 		{
 			if (otherDonor.getMembershipNo() < memberNum)
 			{
@@ -69,7 +69,7 @@ void DonorList::addDonor(const string& firstName, const string& lastName, int me
 			}
 			else
 			{
-				donors.insert(iterDonors, otherDonor); // (position, value)
+				donors->insert(iterDonors, otherDonor); // (position, value)
 			}
 		}
 
