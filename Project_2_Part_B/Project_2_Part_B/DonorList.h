@@ -18,8 +18,6 @@
 
 #include <list>
 #include <algorithm>
-#include <iostream>
-#include <string>		
 
 using namespace std;
 
@@ -49,7 +47,6 @@ public:
 	void emptyList() const;
 
 	void printAllDonors() const;
-	void printDonorByName(const string& lastName) const;
 	void printDonor(int memberNum) const;
 	void printDonation(int memberNum) const;
 	void printTotalDonations() const;
