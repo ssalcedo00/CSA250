@@ -49,28 +49,30 @@ void DonorList::addDonor(const string& firstName,
 	const string& lastName, int memberNum,
 	double amountDonated) const
 {
+	DonorType otherDonor;
+
 	// checks if it's empty to pushback new DonorType -> donors
 	if (donors->empty())
 	{
-		donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
+		donors.push_back(otherDonor);
 	}
 	else
 	{
-		auto iterDonors = donors->begin();
-		auto iterEnd = donors->end();
+		list<DonorType>::iterator iterDonors = donors.begin();
+		size_t originalSize = donors.size();
 
 		// put in membership Number order
-		
-		while ((iterDonors != iterEnd) && (iterDonors->getMembershipNo() < memberNum))
-			iterDonors++;
-
-		if (iterDonors == iterEnd)
-			donors->push_back(DonorType(firstName, lastName, memberNum, amountDonated));
-		else
-			donors->insert(iterDonors,
-				DonorType(firstName, lastName, memberNum, amountDonated));
-	}
-}
+		while (iterDonors != donors.end() && donors.size() <= originalSize)
+		{
+			if (otherDonor.getMembershipNo() < memberNum)
+			{
+				iterDonors++;
+			}
+			else
+			{
+				donors.insert(iterDonors, otherDonor); // (position, value)
+			}
+		}
 
 // Definition member function getNumberOfDonors
 
